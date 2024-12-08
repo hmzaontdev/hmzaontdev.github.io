@@ -3,60 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MathGenius: Çocuklar için uçak içi eğlence sistemi ile eğitici matematik AR deneyimi!">
-    <title>MathGenius - Uçak İçi Eğlence Sistemi</title>
+    <meta name="description" content="MathMagicAR: Çocuklar için uçak içi eğlence sistemi ile matematikte çığır açan buluşlar sunar.">
+    <title>MathMagicAR - Çığır Açan Matematik</title>
     <style>
         /* Genel Stiller */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #F5F5DC; /* Sakin arka plan rengi */
+            background: #F9F9F9;
             color: #333;
-            overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #4CAF50, #8BC34A); /* Doğal ve güven veren renkler */
-            padding: 30px 0;
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            padding: 40px 20px;
             text-align: center;
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.8em;
             margin: 0;
-            text-shadow: 1px 1px 3px #444;
         }
 
         h2 {
-            font-size: 1.4em;
+            font-size: 1.5em;
             margin-top: 10px;
             color: #E8F5E9;
-        }
-
-        .container {
-            text-align: center;
-            margin: 30px 15px;
-        }
-
-        .button {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 25px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: white;
-            background: #3F51B5;
-            border-radius: 10px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .button:hover {
-            background: #5C6BC0;
-            transform: scale(1.05);
         }
 
         .tabs {
@@ -86,11 +61,15 @@
         }
 
         .features {
-            display: flex;
+            display: none;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
             padding: 20px;
+        }
+
+        .features.active {
+            display: flex;
         }
 
         .feature-card {
@@ -108,12 +87,57 @@
             margin-bottom: 15px;
         }
 
+        .action-button {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .action-button.active {
+            display: block;
+        }
+
+        .button-large {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: white;
+            background: #3F51B5;
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-large:hover {
+            background: #5C6BC0;
+            transform: scale(1.05);
+        }
+
+        .payment-screen {
+            display: none;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .payment-screen.active {
+            display: block;
+        }
+
+        .payment-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+
         footer {
-            background: linear-gradient(135deg, #8BC34A, #4CAF50);
+            background: linear-gradient(135deg, #81C784, #4CAF50);
             color: white;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 30px;
+            padding: 10px 0;
         }
 
         footer a {
@@ -130,48 +154,94 @@
 <body>
     <!-- Başlık -->
     <header>
-        <h1>MathGenius</h1>
-        <h2>Çocuklar için uçak içi eğlence sistemi ile matematik AR deneyimi!</h2>
+        <h1>MathMagicAR</h1>
+        <h2>Uçak içi eğlence sistemiyle çığır açan matematik buluşları!</h2>
     </header>
 
     <!-- Sekmeler -->
     <div class="tabs">
-        <div class="tab active">🎓 Deneme Sürümü</div>
-        <div class="tab">⭐ Pro Sürüm</div>
+        <div class="tab active" onclick="showTab('trial')">🎓 Deneme Sürümü</div>
+        <div class="tab" onclick="showTab('pro')">⭐ Pro Sürüm</div>
     </div>
 
-    <!-- İndirme ve GitHub Bağlantıları -->
-    <div class="container">
-        <a target="_blank" href="https://drive.google.com/drive/folders/1JpSPmYhTE113ODOMQbF9kH42LcyD1L9d?usp=sharing" class="button">📥 Uygulamayı İndir</a>
-        <a target="_blank" href="https://github.com/hmzaont/MatematikselKesiflerAR" class="button">🌐 GitHub</a>
-    </div>
-
-    <!-- Özellikler -->
-    <div class="features">
+    <!-- Deneme Sürümü Özellikleri -->
+    <div id="trial" class="features active">
         <div class="feature-card">
-            <img src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Matematik Eğlencesi">
-            <h3>🎲 AR Matematik</h3>
-            <p>Uçak yolculuklarında matematik öğrenimini eğlenceli hale getirin.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKBNwtPykCJnyV-LvZcIcsy_NIUdVHH7E-8w&s" alt="Matematik Dahileri">
+            <h3>🎲 Matematik Dahileri</h3>
+            <p>Çocuklar matematiği bilim insanlarıyla keşfeder.</p>
         </div>
         <div class="feature-card">
-            <img src="https://images.pexels.com/photos/7269671/pexels-photo-7269671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Eğitim ve Eğlence">
-            <h3>📚 Eğitim ve Eğlence</h3>
-            <p>Çocuklar interaktif oyunlarla öğrenirken eğlenir.</p>
-        </div>
-        <div class="feature-card">
-            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Dostça Tasarım">
-            <h3>🖌️ Çocuk Dostu Arayüz</h3>
-            <p>Modern ve kolay kullanım sağlayan tasarım.</p>
+            <img src="https://matematikrontgeni.com/uploads/posts/2023-01/seo-2048x1480-1.jpg" alt="Eğitim ve Eğlence">
+            <h3>📚 Basit Eğitim</h3>
+            <p>Matematikte temel kavramları öğreten bilgiler.</p>
         </div>
     </div>
 
-    <!-- Altbilgi -->
+    <!-- Pro Sürüm Özellikleri -->
+    <div id="pro" class="features">
+        <div class="feature-card">
+            <img src="https://www.infotechacademy.com.tr/content/education/artirilmis_gerceklik_kursu22.png" alt="Dostça Tasarım">
+            <h3>🌟 Gelişmiş AR Deneyimi</h3>
+            <p>Daha etkileşimli ve detaylı AR deneyimiyle ileri düzey matematik.</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://m.media-amazon.com/images/I/818jPUR5UML._AC_UF1000,1000_QL80_.jpg" alt="Ödüller ve Rozetler">
+            <h3>🏆 Ödüller ve Rozetler</h3>
+            <p>Başarımlarınızı dijital ödüllerle taçlandırın.</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5612AQGLctAdcSkAgw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1652099425507?e=2147483647&v=beta&t=7NvA0BKYzsl7DacpZVyYy-wwfTZaLKkkuqUsz4y0pts" alt="Aile Kontrolü">
+            <h3>👪 Aile Kontrolü</h3>
+            <p>Ebeveynler için izleme ve kontrol özellikleri.</p>
+        </div>
+    </div>
+
+    <!-- Deneme Sürümü Aksiyon Butonu -->
+    <div id="trial-button" class="action-button active">
+        <a target="_blank" href="https://drive.google.com/file/d/1a_HuZ6frUbe4z8T0otN4pKh9mWAnQ3rD/view?usp=share_link" class="button-large">📥 Uygulamayı İndir</a>
+    </div>
+
+    <!-- Pro Sürümü Ödeme Ekranı -->
+    <div id="pro-payment" class="payment-screen">
+        <div class="payment-box">
+            <h3>Pro Sürüm</h3>
+            <p>Gelişmiş özelliklere erişmek için Pro sürümü satın alın.</p>
+            <button class="button-large" onclick="alert('Ödeme işlemi şu anda aktif değil.')">💳 Şimdi Satın Al (₺99)</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 MathGenius | Tüm Hakları Saklıdır.</p>
-        <p>
-            <a target="_blank" href="https://drive.google.com/drive/folders/1JpSPmYhTE113ODOMQbF9kH42LcyD1L9d?usp=sharing">Uygulamayı İndir</a> | 
+        <p>&copy; 2024 MathMagicAR | Tüm Hakları Saklıdır.</p>
+        <p></p>
             <a target="_blank" href="https://github.com/hmzaont/MatematikselKesiflerAR">GitHub</a>
         </p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Özellikleri göster
+            document.querySelectorAll('.features').forEach(feature => {
+                feature.classList.remove('active');
+            });
+            document.querySelector(`#${tabId}`).classList.add('active');
+
+            // Aksiyon butonunu veya ödeme ekranını göster
+            document.querySelectorAll('.action-button, .payment-screen').forEach(element => {
+                element.classList.remove('active');
+            });
+            if (tabId === 'trial') {
+                document.getElementById('trial-button').classList.add('active');
+            } else if (tabId === 'pro') {
+                document.getElementById('pro-payment').classList.add('active');
+            }
+
+            // Sekme görünümünü değiştir
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
