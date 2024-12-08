@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mathladder: Eğlenceli matematik oyunu ile çocuklar için öğrenme eğlencesi!">
-    <title>Mathladder - Çocuklar için Matematik</title>
+    <meta name="description" content="MathGenius: Çocuklar için uçak içi eğlence sistemi ile eğitici matematik AR deneyimi!">
+    <title>MathGenius - Uçak İçi Eğlence Sistemi</title>
     <style>
         /* Genel Stiller */
         body {
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #FFDAB9; /* Canlı arka plan rengi */
-            color: #2D2D34;
+            background: #F5F5DC; /* Sakin arka plan rengi */
+            color: #333;
             overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #FF6F61, #FFA07A); /* Canlı başlık arka planı */
+            background: linear-gradient(135deg, #4CAF50, #8BC34A); /* Doğal ve güven veren renkler */
             padding: 30px 0;
             text-align: center;
             color: white;
@@ -25,38 +25,64 @@
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             margin: 0;
-            text-shadow: 2px 2px 4px #444;
+            text-shadow: 1px 1px 3px #444;
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-top: 10px;
-            color: #FFF8DC;
+            color: #E8F5E9;
         }
 
         .container {
             text-align: center;
-            margin: 40px 20px;
+            margin: 30px 15px;
         }
 
         .button {
             display: inline-block;
             margin: 15px;
-            padding: 15px 30px;
-            font-size: 1.3em;
+            padding: 15px 25px;
+            font-size: 1.2em;
             text-decoration: none;
             color: white;
-            background: #FFB400;
-            border-radius: 12px;
+            background: #3F51B5;
+            border-radius: 10px;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .button:hover {
-            background: #FF6F61;
+            background: #5C6BC0;
             transform: scale(1.05);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: #C8E6C9;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .tab.active {
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tab:hover {
+            background: #81C784;
         }
 
         .features {
@@ -83,46 +109,36 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #FFA07A, #FF6F61);
+            background: linear-gradient(135deg, #8BC34A, #4CAF50);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            padding: 15px 0;
+            margin-top: 30px;
         }
 
         footer a {
-            color: #FFF8DC;
+            color: #E8F5E9;
             text-decoration: none;
             font-weight: bold;
         }
 
         footer a:hover {
-            color: #FFB400;
-        }
-
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.pexels.com/photos/1449934/pexels-photo-1449934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Ücretsiz çocuk temalı resim */
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            opacity: 0.3;
+            color: #AED581;
         }
     </style>
 </head>
 <body>
-    <!-- Arka Plan Resmi -->
-    <div class="background-image"></div>
-
     <!-- Başlık -->
     <header>
-        <h1>MathMagicAR</h1>
-        <h2>Çocuklar için eğlenceli ve interaktif matematik!</h2>
+        <h1>MathGenius</h1>
+        <h2>Çocuklar için uçak içi eğlence sistemi ile matematik AR deneyimi!</h2>
     </header>
+
+    <!-- Sekmeler -->
+    <div class="tabs">
+        <div class="tab active">🎓 Deneme Sürümü</div>
+        <div class="tab">⭐ Pro Sürüm</div>
+    </div>
 
     <!-- İndirme ve GitHub Bağlantıları -->
     <div class="container">
@@ -134,24 +150,24 @@
     <div class="features">
         <div class="feature-card">
             <img src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Matematik Eğlencesi">
-            <h3>🎲 Matematik Oyunları</h3>
-            <p>Eğlenceli seviyelerle matematik öğrenimini kolaylaştırın.</p>
+            <h3>🎲 AR Matematik</h3>
+            <p>Uçak yolculuklarında matematik öğrenimini eğlenceli hale getirin.</p>
         </div>
         <div class="feature-card">
             <img src="https://images.pexels.com/photos/7269671/pexels-photo-7269671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Eğitim ve Eğlence">
             <h3>📚 Eğitim ve Eğlence</h3>
-            <p>Çocuklar hem öğrenir hem eğlenir!</p>
+            <p>Çocuklar interaktif oyunlarla öğrenirken eğlenir.</p>
         </div>
         <div class="feature-card">
             <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Dostça Tasarım">
             <h3>🖌️ Çocuk Dostu Arayüz</h3>
-            <p>Renkli, modern ve çocuk dostu bir tasarım sunar.</p>
+            <p>Modern ve kolay kullanım sağlayan tasarım.</p>
         </div>
     </div>
 
     <!-- Altbilgi -->
     <footer>
-        <p>&copy; 2024 Mathladder | Tüm Hakları Saklıdır.</p>
+        <p>&copy; 2024 MathGenius | Tüm Hakları Saklıdır.</p>
         <p>
             <a target="_blank" href="https://drive.google.com/drive/folders/1JpSPmYhTE113ODOMQbF9kH42LcyD1L9d?usp=sharing">Uygulamayı İndir</a> | 
             <a target="_blank" href="https://github.com/hmzaont/MatematikselKesiflerAR">GitHub</a>
